@@ -1,0 +1,158 @@
+class app {
+private:
+int app_id;
+string app_name;
+string description;
+string file_path;
+public:
+app(int Id,string Name,string desc,string fpath);
+void update_app_details();
+void get_app_details();
+}
+
+void category::display_categorized_apps(){
+   //implementation goes here
+}
+void category::add_categories(int id,string catName){
+  //implementation goes here  
+}
+ void category::update_categories(){
+     //implementation goes here
+ }
+
+class category {
+    private:
+        int category_id;
+        string category_name;
+    public:
+        void display_categorized_apps();
+        void add_categories(int id,string catName);
+        void update_categories();
+};
+
+void developer::update_dev_details() {
+  //implementation goes here
+}
+
+void developer::upload_app() {
+  //implementation goes here
+}
+
+void developer::update_app() {
+  //implementation goes here
+}
+
+void developer::reply_review() {
+  //implementation goes here
+}
+class developer {
+private:
+	int developer_id;
+	string company_name;
+	string email;
+	string password;
+	string about;
+public:
+	void set_developer(int devId,string companyName,string mail,string pwd,string About);
+	void update_dev_details();
+	void upload_app();
+	void update_app();
+	void reply_review();
+};
+
+#include <iostream>
+#include <string>
+#include "developer.h"
+#include "app.h"
+#include "user.h"
+#include "category.h"
+#include "review.h"
+
+int main(){
+	string Name,FirstName,LastName, Email, Password, 
+	About,CompanyName,Dob,Country,Description,Filepath,Comment;
+int ID;
+
+	//Creating Dynamic Developer Objects
+	developer* dev1, * dev2;
+	dev1 = new developer;
+	dev2 = new developer;
+	
+	//Creating Dynamic Category Objects
+	category* cat1, * cat2;
+	cat1 = new category;
+	cat2 = new category;
+	
+ 	//Initializing Dynamic App Objects with Overload constructor
+	app* app1, * app2;
+	app1 = new app(ID, Name, Description, Filepath);
+	app2 = new app(ID, Name, Description, Filepath);
+
+	//Creating Dynamic User Objects
+	user* us1, * us2;
+	us1 = new user;
+	us2 = new user;
+	
+	//Creating Dynamic Review Objects
+	review* rev1, * rev2;
+	rev1 = new review(Comment);
+	rev2 = new review(Comment);
+
+  	//Initializing Developers
+	dev1->set_developer(ID,CompanyName,Email,Password,About);
+	dev2->set_developer(ID, CompanyName, Email, Password, About);
+	
+	//Initializing Category
+	cat1->add_categories(ID, Name);
+	cat2->add_categories(ID, Name);
+	 
+	//Initializing Users
+	us1->set_user_details(Email, FirstName, LastName, Password, Dob, Country);
+	us2->set_user_details(Email, FirstName, LastName, Password, Dob, Country);
+
+  	//deleting dynamic objects
+  	delete dev1, dev2;
+  	delete us1, us2;
+	delete app1, app2;
+	delete cat1, cat2;
+	delete rev1, rev2;
+}
+
+void user::set_user_details(string mail,string fname,string lname,string pwd,string dob,string ctry){
+    //implementation goes here
+}
+int user::cal_age(){
+    //implementation goes here
+}
+void user::update_profile(){
+    //implementation goes here
+}
+void user::write_review(){
+    //implementation goes here
+}
+
+class user {
+private:
+	string email;
+	string first_name;
+	string last_name;
+	string password;
+	string dob;
+	string country;
+public:
+	void set_user_details(string mail,string fname,string lname,string pwd,string dob,string ctry);
+	int cal_age();
+	void update_profile();
+	void write_review();
+};
+
+app::app(int Id,string Name,string desc,string fpath) {
+  //implementation goes here
+}
+void app::update_app() {
+  //implementation goes here
+}
+
+void app::get_app_details() {
+  //implementation goes here
+}
